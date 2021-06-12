@@ -1,6 +1,5 @@
 package com.bipuldevashish.movierating.ui
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +10,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bipuldevashish.movierating.R
 import com.bipuldevashish.movierating.models.Movie
-import com.example.assignment.util.Utils.loadImage
-
-private const val TAG = "MovieListAdaptor"
+import com.bipuldevashish.movierating.util.Constants
+import com.bipuldevashish.movierating.util.Utils.loadImage
 
 class MovieListAdaptor :
     PagingDataAdapter<Movie, MovieListAdaptor.MovieListViewHolder>(USER_COMPARATOR) {
@@ -40,12 +38,11 @@ class MovieListAdaptor :
         private val movieAdult = itemView.findViewById<TextView>(R.id.tv_adult)
 
         fun bind(item: Movie) {
-            Log.d(TAG, "bind: binding function called inside movieListAdaptor")
             movieName.text = item.title
             movieRate.text = item.vote_average.toString()
             movieDate.text = item.release_date
             movieAdult.text = item.adult.toString()
-            imageView.loadImage(item.poster_path)
+            imageView.loadImage(Constants.BASE_IMAGE_URL+item.poster_path)
         }
     }
 
@@ -56,7 +53,6 @@ class MovieListAdaptor :
     }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
-        Log.d(TAG, "onBindViewHolder: called")
         getItem(position)?.let { (holder as? MovieListViewHolder)?.bind(item = it) }
     }
 }

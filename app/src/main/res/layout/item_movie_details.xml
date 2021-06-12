@@ -17,6 +17,7 @@
         android:layout_margin="8dp">
 
         <ImageView
+            android:contentDescription="@string/movie_poster"
             android:id="@+id/movie_poster"
             android:layout_width="130dp"
             android:layout_height="200dp"
@@ -38,12 +39,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sample_title"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_movie_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
                 android:layout_marginTop="4dp"
                 android:text="@string/sample_rating" />
 

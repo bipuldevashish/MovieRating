@@ -1,4 +1,4 @@
-package com.bipuldevashish.movierating.ui
+package com.bipuldevashish.movierating.ui.rate_movie
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.bipuldevashish.movierating.R
 
-
-class MovieDetails : Fragment() {
+class RateMovieFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movie_details, container, false)
+        return inflater.inflate(R.layout.fragment_rate_movie, container, false)
     }
-
 }

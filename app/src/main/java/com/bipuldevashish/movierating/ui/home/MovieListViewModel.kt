@@ -1,4 +1,4 @@
-package com.bipuldevashish.movierating.ui
+package com.bipuldevashish.movierating.ui.home
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

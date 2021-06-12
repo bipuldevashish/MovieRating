@@ -7,17 +7,28 @@
 
     <fragment
         android:id="@+id/movieList"
-        android:name="com.bipuldevashish.movierating.ui.MovieListFragment"
-        android:label="fragment_movie_list"
-        tools:layout="@layout/fragment_movie_list" />
+        android:name="com.bipuldevashish.movierating.ui.home.MovieListFragment"
+        android:label="Movies List"
+        tools:layout="@layout/fragment_movie_list" >
+        <action
+            android:id="@+id/action_movieList_to_movieDetails"
+            app:destination="@id/movieDetails" />
+    </fragment>
     <fragment
         android:id="@+id/movieDetails"
-        android:name="com.bipuldevashish.movierating.ui.MovieDetails"
-        android:label="fragment_movie_details"
-        tools:layout="@layout/fragment_movie_details" />
+        android:name="com.bipuldevashish.movierating.ui.movie_details.MovieDetailsFragment"
+        android:label="Movie Details"
+        tools:layout="@layout/fragment_movie_details" >
+        <action
+            android:id="@+id/action_movieDetails_to_rateMovie"
+            app:destination="@id/rateMovie" />
+        <argument
+            android:name="data"
+            app:argType="com.bipuldevashish.movierating.models.Movie" />
+    </fragment>
     <fragment
         android:id="@+id/rateMovie"
-        android:name="com.bipuldevashish.movierating.ui.RateMovieFragment"
-        android:label="fragment_rate_movie"
+        android:name="com.bipuldevashish.movierating.ui.rate_movie.RateMovieFragment"
+        android:label="Rate Movie"
         tools:layout="@layout/fragment_rate_movie" />
 </navigation>

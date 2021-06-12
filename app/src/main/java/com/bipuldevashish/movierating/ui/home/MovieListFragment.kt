@@ -1,17 +1,20 @@
-package com.bipuldevashish.movierating.ui
+package com.bipuldevashish.movierating.ui.home
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bipuldevashish.movierating.R
 import com.bipuldevashish.movierating.databinding.FragmentMovieListBinding
+import com.bipuldevashish.movierating.models.Movie
 
 private const val TAG = "MovieListFragment"
 
-class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
+class MovieListFragment : Fragment(R.layout.fragment_movie_list),
+    MovieListAdaptor.OnItemClickListner {
 
     private var _binding: FragmentMovieListBinding? = null
     private val binding get() = _binding!!
@@ -22,7 +25,7 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
 
         _binding = FragmentMovieListBinding.bind(view)
 
-        val movieListAdaptor = MovieListAdaptor()
+        val movieListAdaptor = MovieListAdaptor(this)
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
@@ -37,5 +40,11 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
             Log.d(TAG, "onViewCreated: data submitted to movieList adapter")
         }
 
+    }
+
+    override fun onItemClick(data: Movie) {
+        Log.d(TAG, "onItemClick: navigating to detailed fragment")
+            val action = MovieListFragmentDirections.actionMovieListToMovieDetails(data)
+            view?.findNavController()?.navigate(action)
     }
 }

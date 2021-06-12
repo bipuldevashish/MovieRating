@@ -6,4 +6,13 @@
     <string name="sample_rating">Rating : 8.2</string>
     <string name="sample_date">2021-04-22</string>
     <string name="sample_adult">Adult : Yes</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="overview">Overview:</string>
+    <string name="sample_overview">A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground</string>
+    <string name="_dash">-</string>
+    <string name="movie_rating">Rating : </string>
+    <string name="movie_date">Release Date : </string>
+    <string name="age_yes">18+ : Yes</string>
+    <string name="age_no">18+ : No</string>
+    <string name="movie_thumbnail">Movie Thumbnail</string>
 </resources>

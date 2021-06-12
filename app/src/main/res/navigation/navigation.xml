@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/movieList">
+
+    <fragment
+        android:id="@+id/movieList"
+        android:name="com.bipuldevashish.movierating.ui.MovieListFragment"
+        android:label="fragment_movie_list"
+        tools:layout="@layout/fragment_movie_list" />
+    <fragment
+        android:id="@+id/movieDetails"
+        android:name="com.bipuldevashish.movierating.ui.MovieDetails"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" />
+    <fragment
+        android:id="@+id/rateMovie"
+        android:name="com.bipuldevashish.movierating.ui.RateMovieFragment"
+        android:label="fragment_rate_movie"
+        tools:layout="@layout/fragment_rate_movie" />
+</navigation>

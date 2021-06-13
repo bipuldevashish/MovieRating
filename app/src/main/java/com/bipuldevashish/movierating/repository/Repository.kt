@@ -5,12 +5,15 @@ import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.bipuldevashish.movierating.api.ApiService
 import com.bipuldevashish.movierating.paging.MovieListPagingSource
+import com.bipuldevashish.movierating.room.RatingDao
+import com.bipuldevashish.movierating.room.RatingItem
 import javax.inject.Inject
 import javax.inject.Singleton
 
-private const val TAG = "Repository"
 @Singleton
-class Repository @Inject constructor(private val apiService: ApiService) {
+class Repository @Inject constructor(
+    private val apiService: ApiService,
+    private val ratingDao: RatingDao) {
 
        fun getMovieList()  =
            Pager(
@@ -21,4 +24,11 @@ class Repository @Inject constructor(private val apiService: ApiService) {
                ),
                pagingSourceFactory = { MovieListPagingSource(apiService) }
            ).liveData
+
+        suspend fun addRating(ratingItem: RatingItem){
+            ratingDao.addRating(ratingItem)
+        }
+
+        suspend fun findRating(id: Int) : Double = ratingDao.findRating(id)
+
 }

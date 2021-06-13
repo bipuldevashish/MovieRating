@@ -8,7 +8,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.bipuldevashish.movierating.R
 import dagger.hilt.android.AndroidEntryPoint
 
-private const val TAG = "MainActivity"
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

@@ -15,4 +15,10 @@
     <string name="age_yes">18+ : Yes</string>
     <string name="age_no">18+ : No</string>
     <string name="movie_thumbnail">Movie Thumbnail</string>
+    <string name="you_haven_t_rated_this_movie_yet">You haven\'t rated this movie yet!</string>
+    <string name="rate_now">Rate Now</string>
+    <string name="your_rating">Your Rating :</string>
+    <string name="rate_the_movie">Rate the Movie </string>
+    <string name="submit">Submit</string>
+    <string name="_5">5</string>
 </resources>

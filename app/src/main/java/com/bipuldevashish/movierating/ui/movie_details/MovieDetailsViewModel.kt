@@ -1,12 +1,23 @@
 package com.bipuldevashish.movierating.ui.movie_details
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bipuldevashish.movierating.room.RatingDao
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-private const val TAG = "MovieDetailsViewModel"
+@HiltViewModel
+class MovieDetailsViewModel @Inject constructor(ratingDao: RatingDao): ViewModel() {
 
-class MovieDetailsViewModel: ViewModel() {
-    init {
-        Log.d("MovieDetailsViewModel", "MovieDetailsViewModel created!")
+    private var _rate: MutableLiveData<Double?> = MutableLiveData<Double?>()
+    val rate: LiveData<Double?>
+        get() = _rate
+    val dao = ratingDao
+
+
+    suspend fun getData(movieId: Int){
+        _rate.postValue(dao.findRating(movieId))
     }
+
 }

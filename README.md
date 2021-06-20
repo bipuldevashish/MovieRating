@@ -25,6 +25,6 @@ Your Rating Screen
 <img src="https://github.com/bipuldevashish/MovieRating/blob/master/screenshots/Screenshot_1624181254.png" height="300">
 
 
-## License & copyrights
+## License & Copyrights
 
 © Bipul Devashish

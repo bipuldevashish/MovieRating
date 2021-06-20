@@ -2,7 +2,7 @@
 
 **Version 1.0.0**
 
-An android app that shows list of popular movies and its details and stores your rating locally.
+An android app that shows list of popular movies and its details and stores your rating locally to show it later.
 
 Movie List Screen
 
